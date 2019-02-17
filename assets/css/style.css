@@ -1,0 +1,10 @@
+
+*
+{
+    border: 1px solid green;
+}
+#number,
+#score
+{
+    display:inline-block;
+}
