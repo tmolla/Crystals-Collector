@@ -3,38 +3,86 @@ var game = {
     totalScore: 0,
     wins: 0,
     losses: 0,
-    crystal: [4,5,6,7],
-    updateWin: function(score){
-        $("#win").text("Wins: " + score.toString())
+    numberOfCrystals:4,
+    crystal: [],
+    
+
+    resetWins: function(){
+        this.wins = 0;
+        $("#win").text("Wins: " + this.wins.toString())
     },
-    updateLosses: function(score){
-        $("#losess").text("Losses: "+ score.toString())
+
+
+    resetLosses: function(){
+        console.log("in reset loss");
+        this.losses = 0;
+        $("#losess").text("Losses: "+ this.losses.toString())
     },
+
+
+    resetTotalScore: function(){
+        this.totalScore = 0;
+        $("#total-score").text(this.totalScore.toString())
+    },
+
+
+    resetTargetScore: function(){
+        this.targetScore = Math.floor(Math.random() * 120) + 19;
+        $("#targetScore").text(this.targetScore.toString());
+    },
+    
+    
+    updateWin: function(){
+        this.wins +=1;
+        $("#win").text("Wins: " + this.wins.toString());
+    },
+
+
+    updateLosses: function(){
+        console.log("in updateLosses");
+        this.losses += 1;
+        $("#losses").text("Losses: " + this.losses.toString());
+    },
+    
+    
+    resetCrystalValues: function(){
+        for (var i=0; i<this.numberOfCrystals; i++){
+            this.crystal[i] = Math.floor(Math.random() * 12) + 1;
+            console.log(this.crystal[i]);
+        };
+    },
+
+
     updateScore: function(index){
-        console.log("index " + index.toString());
-        console.log("value of crystal " + this.crystal[index]);
+        //console.log("index " + index.toString());
+        //console.log("value of crystal " + this.crystal[index]);
         this.totalScore += this.crystal[index];
-        $("#your-score").text( this.totalScore.toString());
+        $("#total-score").text( this.totalScore.toString());
         if(this.totalScore > this.targetScore){
             alert(">");
-            this.updateLosses;
-            this.initializeGame()
+            this.updateLosses();
+            this.resetGame()
         }
         if(this.totalScore == this.targetScore){
             alert("=");
-            this.updateWin;
-            this.initializeGame()
+            this.updateWin();
+            this.resetGame()
         };
     },
-    
+
+    resetGame: function(){
+        console.log("in resetGame")
+        this.resetCrystalValues();
+        this.resetTotalScore();
+        this.resetTargetScore();
+    },
+
     initializeGame: function() {
-        for (var i=0; i<this.crystal.length; i++){
-            this.crystal[i] = Math.floor(Math.random() * 12) + 1;
-        } 
-        this.targetScore = Math.floor(Math.random() * 120) + 19;
-        $("#number").text(this.targetScore.toString());
-        this.updateWin(0);
-        this.updateLosses(0);
+        this.resetCrystalValues();
+        this.resetWins();
+        this.resetLosses();
+        this.resetTotalScore();
+        this.resetTargetScore();
     },
 }
 
