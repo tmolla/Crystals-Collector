@@ -28,7 +28,7 @@ var game = {
 
     resetTargetScore: function(){
         this.targetScore = Math.floor(Math.random() * 120) + 19;
-        $("#targetScore").text(this.targetScore.toString());
+        $("#randomNum").text(this.targetScore.toString());
     },
     
     
@@ -59,12 +59,12 @@ var game = {
         this.totalScore += this.crystal[index];
         $("#total-score").text( this.totalScore.toString());
         if(this.totalScore > this.targetScore){
-            alert(">");
+            //alert(">");
             this.updateLosses();
             this.resetGame()
         }
         if(this.totalScore == this.targetScore){
-            alert("=");
+            //alert("=");
             this.updateWin();
             this.resetGame()
         };

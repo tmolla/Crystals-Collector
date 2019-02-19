@@ -1,54 +1,118 @@
 
 *
 {
+    font-family: 'Times New Roman', Times, serif;
     box-sizing: content-box;
-    border: 1px solid lightgray;
-    margin: 0px;
+    margin: 5px;
     padding:0px
 }
+
 #targetScore,
 #score,
-.instruction,
 h1
 {
     display:inline-block;
     
 }
+body
+{
+    background-image: url(../images/restaurant.png);
+    background-size:cover;
+    background-repeat: repeat;
+}
+
+#your-score
+{
+    height:25px;
+    font-size: large;
+
+}
+
+.instruction
+{
+    width: 40%;
+    background-color: tan;
+    margin:5px;
+    color: olivedrab;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#randomNum
+{
+    color:black;
+    font-weight: bolder;
+    font-size: larger;
+ 
+}
 
 .gameInfo
 {
-   border: 3px solid yellow;
-   background-color: blue;
+   width: 50%;
+   vertical-align: top;
+}
+
+#targetScore, #score
+{
+
+    margin:5px;
+    padding:0px;
+    float: left;
+    height:75px;
 }
 
 #targetScore
 {
     background-color: green;
-    border: 1px solid red;
+    width: 150px;
+    
 }
+
 #score
 {
     background-color: turquoise;
+    width: 125px;
 }
 
+#win, #losses
+{
+    padding:5px;
+}
+
+
+#crystals
+{
+    clear: both;
+    
+}
 
 #total-score,
 #your-score
 {
     background-color: teal;
+    width:200px;
+    color: white;
+
     
 }
-.instruction
+#total-score
 {
-    background-color: khaki;
-
+    clear:both;
+    height:75px;
+    font-weight: bolder; 
+    font-size: larger;   
+    
 }
+
 .title
 {
     margin-bottom:5px;
 }
+
 h1 
 {
-    background-color: lightcoral;
+    background-color: brown;
     padding:20px;  
+    margin: 5px;
+    color: white;
 }
