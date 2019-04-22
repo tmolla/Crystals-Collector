@@ -1,4 +1,4 @@
-# Homework 4
+# Math based puzzle 
 ## Crystals Collector Game
 ### How the game is played
 
